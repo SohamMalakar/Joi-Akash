@@ -1,6 +1,7 @@
 {
   "name": "test",
 	"displayName": "test",
+	"publisher": "SohamMalakar",
 	"description": "my first vscode extension",
 	"version": "0.0.1",
 	"engines": {
