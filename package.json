@@ -21,8 +21,7 @@
 		"commands": [
 			{
 				"command": "joiakash.run",
-				"title": "Joi Akash",
-				"icon": "./images/flame.svg"
+				"title": "Joi Akash"
 			}
 		],
 		"keybindings": [

@@ -1,9 +1,12 @@
 import { basename, extname } from 'path';
 import * as vscode from 'vscode';
+let myStatusBarItem: vscode.StatusBarItem;
 
 export function activate(context: vscode.ExtensionContext) {
 	
-	let disposable = vscode.commands.registerCommand('joiakash.run', async () => {
+	const myCommandId = 'joiakash.run';
+
+	context.subscriptions.push(vscode.commands.registerCommand(myCommandId, async () => {
 
 		const editor = vscode.window.activeTextEditor;
 
@@ -52,7 +55,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 		tempArgs = JSON.stringify(tempArgs);
 		tempArgs = tempArgs.substring(1, tempArgs.length - 1); // Removing the inverted commas from the start and from the end
-		// console.log(tempArgs);
 
 		cmd = JSON.stringify(cmd);
 		cmd = cmd.substring(1, cmd.length - 1); // Removing the inverted commas from the start and from the end
@@ -101,9 +103,15 @@ export function activate(context: vscode.ExtensionContext) {
 		
 		term.show();
 		term.sendText(cmd);
-	});
+	}));
 
-	context.subscriptions.push(disposable);
+	// create a new status bar item that we can now manage
+	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
+	myStatusBarItem.command = myCommandId;
+	myStatusBarItem.text = "Joi Akash $(flame)";
+	myStatusBarItem.show();
+
+	context.subscriptions.push(myStatusBarItem);
 }
 
 export function deactivate() {}
