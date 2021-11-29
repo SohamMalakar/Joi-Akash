@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('test.helloWorld', async () => {
+	let disposable = vscode.commands.registerCommand('joiakash.run', async () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		// vscode.window.showInformationMessage('Hello World from test!');
@@ -73,13 +73,11 @@ export function activate(context: vscode.ExtensionContext) {
 
 		let conf = vscode.workspace.getConfiguration("joi-akash-runner.executorMap");
 
-		var cmd;
-
 		var languageId = editor.document.languageId;
 
 		vscode.window.showInformationMessage("I guess it's " + languageId); // Detecting languages
 
-		cmd = conf.get<string>(languageId);
+		var cmd = conf.get<string>(languageId);
 
 		// vscode.window.showInformationMessage("Ahhhhhh!! Ar parina, Joi Akash!!");
 
@@ -175,7 +173,21 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Create a terminal and run the commands
 
-		let term = vscode.window.createTerminal("Joi Akash");
+		let terms = vscode.window.terminals;
+
+		var term = null;
+
+		var termName = "Joi Akash";
+
+		for (let t of terms) {
+			if (t.name === termName) {
+				term = t;
+				break;
+			}
+		}
+
+		if (term === null)
+			term = vscode.window.createTerminal(termName);
 		
 		term.show();
 		term.sendText(cmd);

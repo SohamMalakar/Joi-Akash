@@ -5,8 +5,8 @@
 	"repository": {
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
-	"description": "my first vscode extension",
-	"version": "0.0.1",
+	"description": "A extension for running various kinds of programming languages.",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -14,20 +14,20 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:test.helloWorld"
+        "onCommand:joiakash.run"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "test.helloWorld",
+				"command": "joiakash.run",
 				"title": "Joi Akash",
 				"icon": "./images/flame.svg"
 			}
 		],
 		"keybindings": [
 			{
-			  "command": "test.helloWorld",
+			  "command": "joiakash.run",
 			  "key": "ctrl+alt+a"
 			}
 		],
@@ -50,8 +50,8 @@
 						"lua": "cd $dir && lua $fileName $tempArgs",
 						"groovy": "cd $dir && groovy $fileName $tempArgs",
 						"powershell": "powershell -ExecutionPolicy ByPass -File",
-						"bat": "cd $dir && cmd /c \" $fileName $tempArgs \"",
-						"shellscript": "cd $dir && bash $fileName $tempArgs",
+						"bat": "cd $dir && cmd /c '$fileName $tempArgs'",
+						"shellscript": "cd $dir && bash -c './$fileName $tempArgs'",
 						"brainfuck": "cd $dir && brain $fileName",
 
 						"fsharp": "fsi",
