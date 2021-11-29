@@ -42,7 +42,7 @@
 						"cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt -static && $dir$fileNameWithoutExt $tempArgs",
 						"objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
 						"php": "cd $dir && php $fileName $tempArgs",
-						"python": "cd $dir && py $fileName $tempArgs",
+						"python": "cd $dir && python $fileName $tempArgs",
 						"perl": "cd $dir && perl $fileName $tempArgs",
 						"perl6": "cd $dir && perl6 $fileName $tempArgs",
 						"ruby": "cd $dir && ruby $fileName $tempArgs",
