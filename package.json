@@ -1,0 +1,125 @@
+{
+  "name": "test",
+	"displayName": "test",
+	"description": "my first vscode extension",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.62.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "onCommand:test.helloWorld"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "test.helloWorld",
+				"title": "Joi Akash",
+				"icon": "./images/flame.svg"
+			}
+		],
+		"keybindings": [
+			{
+			  "command": "test.helloWorld",
+			  "key": "ctrl+alt+a"
+			}
+		],
+		"configuration": {
+			"title": "Joi Akash",
+			"properties": {
+				"joi-akash-runner.executorMap": {
+					"default": {
+						"javascript": "cd $dir && node $fileName $tempArgs",
+						"java": "cd $dir && javac $fileName && java $fileNameWithoutExt $tempArgs",
+						"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt $tempArgs",
+						"cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt -static && $dir$fileNameWithoutExt $tempArgs",
+						"objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+						"php": "cd $dir && php $fileName $tempArgs",
+						"python": "cd $dir && py $fileName $tempArgs",
+						"perl": "cd $dir && perl $fileName $tempArgs",
+						"perl6": "cd $dir && perl6 $fileName $tempArgs",
+						"ruby": "cd $dir && ruby $fileName $tempArgs",
+						"go": "cd $dir && go run $fileName $tempArgs",
+						"lua": "cd $dir && lua $fileName $tempArgs",
+						"groovy": "cd $dir && groovy $fileName $tempArgs",
+						"powershell": "powershell -ExecutionPolicy ByPass -File",
+						"bat": "cd $dir && cmd /c \" $fileName $tempArgs \"",
+						"shellscript": "cd $dir && bash $fileName $tempArgs",
+						"brainfuck": "cd $dir && brain $fileName",
+
+						"fsharp": "fsi",
+						"csharp": "scriptcs",
+						"vbscript": "cscript //Nologo",
+						"typescript": "ts-node",
+						"coffeescript": "coffee",
+						
+						"scala": "cd $dir && scala $fileName $tempArgs",
+						"swift": "cd $dir && swift $fileName $tempArgs",
+						"julia": "cd $dir && julia $fileName $tempArgs",
+
+						"crystal": "crystal",
+						"ocaml": "ocaml",
+
+						"r": "Rscript",
+						
+						"applescript": "osascript",
+						"clojure": "lein exec",
+						"haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+						
+						"rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt $tempArgs",
+						
+						"racket": "racket",
+						"scheme": "csi -script",
+						"ahk": "autohotkey",
+						"autoit": "autoit3",
+						
+						"dart": "cd $dir && dart run $fileName $tempArgs",
+						"pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt $tempArgs",
+						"d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt $tempArgs",
+						
+						"haskell": "runhaskell",
+						
+						"nim": "nim compile --verbosity:0 --hints:off --run",
+						"lisp": "sbcl --script",
+						"kit": "kitc --run",
+						"v": "v run",
+						"sass": "sass --style expanded",
+						"scss": "scss --style expanded",
+						"less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+
+						"FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt $tempArgs",
+						"fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt $tempArgs",
+						"fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt $tempArgs",
+						"fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt $tempArgs"
+					},
+					"description": "Set the executor of each language.",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.62.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.1.0",
+		"@typescript-eslint/parser": "^5.1.0",
+		"eslint": "^8.1.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.3",
+		"typescript": "^4.4.4",
+		"@vscode/test-electron": "^1.6.2"
+	}
+}
