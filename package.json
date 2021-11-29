@@ -2,6 +2,9 @@
   "name": "test",
 	"displayName": "test",
 	"publisher": "SohamMalakar",
+	"repository": {
+		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
+	},
 	"description": "my first vscode extension",
 	"version": "0.0.1",
 	"engines": {
