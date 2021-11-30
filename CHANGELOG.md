@@ -4,6 +4,12 @@ All notable changes to the "Joi Akash" extension will be documented in this file
 
 ## [Unreleased]
 
+## [0.0.6] - 2021-11-30
+
+### Fixed
+
+- Status bar logo appear on startup
+
 ## [0.0.5] - 2021-11-30
 
 ### Added
