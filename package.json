@@ -14,7 +14,7 @@
 		"Programming Languages"
 	],
 	"activationEvents": [
-        "onCommand:joiakash.run"
+		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
