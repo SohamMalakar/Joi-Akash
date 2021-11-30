@@ -43,6 +43,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 		var cmd = conf.get<string>(languageId);
 
+		if (cmd === undefined)
+		{
+			vscode.window.showInformationMessage("To run it, you have to define it in the configuration.");
+			return;
+		}
+
 		// Prompting the user for command line arguments
 		var tempArgs = await vscode.window.showInputBox({placeHolder: 'Program Args'});
 

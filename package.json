@@ -1,17 +1,17 @@
 {
-  "name": "joiakash",
+	"name": "joiakash",
 	"displayName": "Joi Akash",
 	"publisher": "SohamMalakar",
 	"repository": {
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
 	"description": "An extension for running various kinds of programming languages.",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
 	"categories": [
-		"Other"
+		"Programming Languages"
 	],
 	"activationEvents": [
         "onCommand:joiakash.run"
