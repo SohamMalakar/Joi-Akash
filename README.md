@@ -15,14 +15,14 @@ This is a simple executor for programming languages with **command line argument
 
 ![overview](resources/overview.gif)
 
-### Usage
+## Usage
 
 - Click the status bar **Joi Akash** logo to run programs.
 - Use the shortcut (**default**: `Ctrl+Alt+A`) to run the command.
 
 Also, you can use the command palette (either with `F1` or `Ctrl+Shift+P`) and search for **Joi Akash**.
 
-### Configuration
+## Configuration
 
 If you want to configure the commands that are being executed in the terminal follow these steps.
 
@@ -30,7 +30,7 @@ If you want to configure the commands that are being executed in the terminal fo
 2. At the end of the file, type **joi-akash-runner.executorMap** and hit enter.
 3. Now, configure the command of your liking.
 
-### Syntax
+## Syntax
 
 If you type these following keywords in the **joi-akash-runner.executorMap**, it will be replaced with the corresponding values.
 
@@ -42,7 +42,7 @@ If you type these following keywords in the **joi-akash-runner.executorMap**, it
 | **$dirWithoutTrailingSlash** | Directory containing the active document without trailing slash. |
 | **$tempArgs**                | Input string passed as arguments from the prompt.                |
 
-### Known Issues
+## Known Issues
 
 - The default configurations might cause problems with the older versions of powershell.
 
