@@ -31,7 +31,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 		else
 		{
-			vscode.window.showErrorMessage("No code found or selected.");
+			vscode.window.showErrorMessage("No code found.");
 			return;
 		}
 

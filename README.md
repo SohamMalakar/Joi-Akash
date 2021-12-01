@@ -1,6 +1,13 @@
-# Joi Akash for [Visual Studio Code](https://code.visualstudio.com)
+<h1 align="center">
+  <br>
+    <img src="resources/banner.png" alt="logo" width="200">
+  <br><br>
+  Joi Akash for <a href="http://code.visualstudio.com">Visual Studio Code</a>
+  <br>
+  <br>
+</h1>
 
-An extension for running various types of programming languages.
+<h4 align="center">An extension for running various types of programming languages.</h4>
 
 ## Overview
 
