@@ -42,6 +42,12 @@ If you type these following keywords in the **joi-akash-runner.executorMap**, it
 | **$dirWithoutTrailingSlash** | Directory containing the active document without trailing slash. |
 | **$tempArgs**                | Input string passed as arguments from the prompt.                |
 
+### Known Issues
+
+- The default configurations might cause problems with the older versions of powershell.
+
+> **Note**: It's **NOT** a compiler or an interpreter of any kind. If you want to run programs with it, you should install the appropriate compiler or interpreter.
+
 ## Contribuion
 
 If you want to contribute to this extension, please open an issue on [GitHub](https://github.com/SohamMalakar/Joi-Akash/issues).
