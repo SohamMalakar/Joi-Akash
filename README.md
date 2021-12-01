@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">An extension for running various types of programming languages.</h4>
+<h3 align="center">An extension for running various types of programming languages.</h3>
 
 ## Overview
 
