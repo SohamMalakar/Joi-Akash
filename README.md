@@ -10,6 +10,7 @@ This is a simple executor for programming languages with **command line argument
 
 ### Usage
 
+- Click the status bar **Joi Akash** logo to run programs.
 - Use the shortcut (**default**: `Ctrl+Alt+A`) to run the command.
 
 Also, you can use the command palette (either with `F1` or `Ctrl+Shift+P`) and search for **Joi Akash**.

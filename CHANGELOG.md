@@ -4,6 +4,16 @@ All notable changes to the "Joi Akash" extension will be documented in this file
 
 ## [Unreleased]
 
+## [0.0.7] - 2021-12-1
+
+## Added
+
+- More instructions added in the README.md
+
+## Replaced
+
+- Previous gif replaced with a new one
+
 ## [0.0.6] - 2021-11-30
 
 ### Fixed

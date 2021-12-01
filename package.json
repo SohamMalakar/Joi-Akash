@@ -6,7 +6,7 @@
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
 	"description": "An extension for running various kinds of programming languages.",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
