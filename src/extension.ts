@@ -2,6 +2,15 @@ import { basename, extname } from 'path';
 import * as vscode from 'vscode';
 let myStatusBarItem: vscode.StatusBarItem;
 
+function replaceAllFromAString(str: string, find: string, replace: string): string {
+	while (str.includes(find))
+	{
+		str = str.replace(find, replace);
+	}
+
+	return str;
+}
+
 export function activate(context: vscode.ExtensionContext) {
 	
 	const myCommandId = 'joiakash.run';
@@ -59,38 +68,13 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 
-		tempArgs = JSON.stringify(tempArgs);
-		tempArgs = tempArgs.substring(1, tempArgs.length - 1); // Removing the inverted commas from the start and from the end
-
-		cmd = JSON.stringify(cmd);
-		cmd = cmd.substring(1, cmd.length - 1); // Removing the inverted commas from the start and from the end
-
 		// Replace the variables
-		while (cmd.includes("$dir"))
-		{
-			cmd = cmd.replace("$dir", dir);
-		}
+		cmd = replaceAllFromAString(cmd, "$dirWithoutTrailingSlash", dirWithoutTrailingSlash);
+		cmd = replaceAllFromAString(cmd, "$dir", dir);
+		cmd = replaceAllFromAString(cmd, "$fileNameWithoutExt", fileNameWithoutExt);
+		cmd = replaceAllFromAString(cmd, "$fileName", fileName);
+		cmd = replaceAllFromAString(cmd, "$tempArgs", tempArgs);
 		
-		while (cmd.includes("$fileNameWithoutExt"))
-		{
-			cmd = cmd.replace("$fileNameWithoutExt", fileNameWithoutExt);
-		}
-
-		while (cmd.includes("$fileName"))
-		{
-			cmd = cmd.replace("$fileName", fileName);
-		}
-
-		while (cmd.includes("$tempArgs"))
-		{
-			cmd = cmd.replace("$tempArgs", tempArgs);
-		}
-
-		while (cmd.includes("$dirWithoutTrailingSlash"))
-		{
-			cmd = cmd.replace("$dirWithoutTrailingSlash", dirWithoutTrailingSlash);
-		}
-
 		let terms = vscode.window.terminals;
 
 		var term = null;

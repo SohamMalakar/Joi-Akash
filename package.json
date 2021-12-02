@@ -6,7 +6,7 @@
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
 	"description": "An extension for running various kinds of programming languages.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -50,8 +50,8 @@
 						"lua": "cd $dir && lua $fileName $tempArgs",
 						"groovy": "cd $dir && groovy $fileName $tempArgs",
 						"powershell": "powershell -ExecutionPolicy ByPass -File",
-						"bat": "cd $dir && cmd /c '$fileName $tempArgs'",
-						"shellscript": "cd $dir && bash -c './$fileName $tempArgs'",
+						"bat": "cd $dir && cmd /c \"$fileName $tempArgs\"",
+						"shellscript": "cd $dir && bash -c \"./$fileName $tempArgs\"",
 						"brainfuck": "cd $dir && brain $fileName",
 
 						"fsharp": "fsi",

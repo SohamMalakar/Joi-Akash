@@ -4,6 +4,13 @@ All notable changes to the "Joi Akash" extension will be documented in this file
 
 ## [Unreleased]
 
+## [0.1.1] - 2021-12-3
+
+### Fixed
+
+- Configuration and input parser fixed.
+- Refactored code.
+
 ## [0.1.0] - 2021-12-2
 
 ### Fixed
@@ -65,4 +72,3 @@ All notable changes to the "Joi Akash" extension will be documented in this file
 ## [0.0.1] - 2021-11-29
 
 - Initial release
-
