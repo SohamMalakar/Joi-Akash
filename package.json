@@ -101,6 +101,18 @@
 					},
 					"description": "Set the executor of each language.",
 					"scope": "resource"
+				},
+				"joi-akash-runner.commandLineArguments": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether to show the Program Args prompt",
+					"scope": "resource"
+				},
+				"joi-akash-runner.troll": {
+					"type": "boolean",
+					"default": true,
+					"description": "Do you want me to troll Akashdip?",
+					"scope": "resource"
 				}
 			}
 		}

@@ -2,18 +2,20 @@ import { basename, extname } from 'path';
 import * as vscode from 'vscode';
 let myStatusBarItem: vscode.StatusBarItem;
 
-function replaceAllFromAString(str: string, find: string, replace: string): string {
+function replaceAllFromAString(str: string, find: string, replace: string): string
+{
 	while (str.includes(find))
-	{
 		str = str.replace(find, replace);
-	}
 
 	return str;
 }
 
-export function activate(context: vscode.ExtensionContext) {
-	
+export function activate(context: vscode.ExtensionContext)
+{
 	const myCommandId = 'joiakash.run';
+	
+	let joi = vscode.workspace.getConfiguration("joi-akash-runner");
+	let troll = joi.get<boolean>("troll");
 
 	context.subscriptions.push(vscode.commands.registerCommand(myCommandId, async () => {
 
@@ -43,12 +45,14 @@ export function activate(context: vscode.ExtensionContext) {
 			vscode.window.showErrorMessage("No code found.");
 			return;
 		}
+		
 
 		let conf = vscode.workspace.getConfiguration("joi-akash-runner.executorMap");
 
 		var languageId = editor.document.languageId;
 
-		vscode.window.showInformationMessage("I guess it's " + languageId); // Detecting languages
+		if (troll)
+			vscode.window.showInformationMessage("Akashdip predicts it's " + languageId); // Detecting languages
 
 		var cmd = conf.get<string>(languageId);
 
@@ -58,13 +62,18 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 
+		let isPrompt = joi.get<boolean>("commandLineArguments");
+
 		// Prompting the user for command line arguments
-		var tempArgs = await vscode.window.showInputBox({placeHolder: 'Program Args'});
+		var tempArgs = isPrompt? await vscode.window.showInputBox({placeHolder: 'Program Args'}) : "";
 
 		// Canceling the task
 		if (tempArgs === undefined)
 		{
-			vscode.window.showInformationMessage("Ahhhhhh!! Ar parina, Joi Akash!! Task cancelled.");
+			if (troll)
+				vscode.window.showInformationMessage("Ahhhhhh!! Ar parina, Joi Akash!! Task cancelled.");
+			else	
+				vscode.window.showInformationMessage("Task cancelled.");
 			return;
 		}
 
@@ -81,8 +90,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 		var termName = "Joi Akash";
 
-		for (let t of terms) {
-			if (t.name === termName) {
+		for (let t of terms)
+		{
+			if (t.name === termName)
+			{
 				term = t;
 				break;
 			}
@@ -98,9 +109,10 @@ export function activate(context: vscode.ExtensionContext) {
 	// create a new status bar item that we can now manage
 	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
 	myStatusBarItem.command = myCommandId;
-	myStatusBarItem.text = "Joi Akash $(flame)";
+	myStatusBarItem.text = troll? "Joi Akash $(flame)" : "Run $(play-circle)";
 	myStatusBarItem.show();
-
+	myStatusBarItem.tooltip = "Run Code";
+	
 	context.subscriptions.push(myStatusBarItem);
 }
 
