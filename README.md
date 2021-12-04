@@ -9,6 +9,14 @@
 
 <h3 align="center">An extension for running various types of programming languages.</h3>
 
+<br>
+
+<div align="center">
+  
+[![vscode](https://img.shields.io/badge/VS_Code-v1.62+-373277.svg?style=for-the-badge&logo=microsoft&logoColor=white&colorA=2b303b&colorB=7cb7ff)](https://code.visualstudio.com/updates/v1_62)  [![downloads](https://img.shields.io/visual-studio-marketplace/d/SohamMalakar.joiakash?style=for-the-badge&logo=docusign&logoColor=white&colorA=2b303b&colorB=96E072)](https://marketplace.visualstudio.com/items?itemName=SohamMalakar.joiakash)  [![rating](https://img.shields.io/visual-studio-marketplace/stars/SohamMalakar.joiakash?style=for-the-badge&logo=reverbnation&logoColor=white&colorA=2b303b&colorB=00e8c6)](https://marketplace.visualstudio.com/items?itemName=SohamMalakar.joiakash)
+
+</div>
+
 ## Overview
 
 This is a simple executor for programming languages with **command line arguments** support.
