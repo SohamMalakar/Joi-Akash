@@ -46,7 +46,6 @@ export function activate(context: vscode.ExtensionContext)
 			return;
 		}
 		
-
 		let conf = vscode.workspace.getConfiguration("joi-akash-runner.executorMap");
 
 		var languageId = editor.document.languageId;
