@@ -4,6 +4,12 @@ All notable changes to the "Joi Akash" extension will be documented in this file
 
 ## [Unreleased]
 
+## [0.1.5] - 2021-12-8
+
+### Fixed
+
+- Icons updated
+
 ## [0.1.4] - 2021-12-4
 
 ### Added
