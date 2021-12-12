@@ -2,6 +2,12 @@
 
 All notable changes to the "Joi Akash" extension will be documented in this file.
 
+## [0.1.7] - 2021-12-12
+
+### Added
+
+- Added support for Fun Assembly Language
+
 ## [0.1.2] - 2021-12-03
 
 ### Added

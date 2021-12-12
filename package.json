@@ -6,7 +6,7 @@
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
 	"description": "An extension for running various kinds of programming languages.",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -53,6 +53,7 @@
 						"bat": "cd $dir && cmd /c \"$fileName $tempArgs\"",
 						"shellscript": "cd $dir && bash -c \"./$fileName $tempArgs\"",
 						"brainfuck": "cd $dir && brain $fileName",
+						"fasml": "cd $dir && fasml $fileName",
 
 						"fsharp": "fsi",
 						"csharp": "scriptcs",
