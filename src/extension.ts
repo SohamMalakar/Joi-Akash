@@ -16,6 +16,8 @@ export function activate(context: vscode.ExtensionContext)
 	
 	let joi = vscode.workspace.getConfiguration("joi-akash-runner");
 	let troll = joi.get<boolean>("troll");
+	let formatOnRun = joi.get<boolean>("formatOnRun");
+	let formatStyle = joi.get<string>('formatStyle');
 
 	context.subscriptions.push(vscode.commands.registerCommand(myCommandId, async () => {
 
@@ -27,6 +29,7 @@ export function activate(context: vscode.ExtensionContext)
 		let dir = "";
 		let fileNameWithoutExt = "";
 		let dirWithoutTrailingSlash = "";
+		let languageId = "";
 
 		if (editor)
 		{
@@ -39,6 +42,15 @@ export function activate(context: vscode.ExtensionContext)
 			
 			dir = '"' + dir + '"';
 			dirWithoutTrailingSlash = '"' + dirWithoutTrailingSlash + '"';
+
+			languageId = editor.document.languageId;
+
+			if ((languageId == "c" || languageId == "cpp" || languageId == "csharp" || languageId == "java" || languageId == "javascript" || languageId == "json" || languageId == "objective-c" || languageId == "proto3") && formatOnRun)
+			{
+				var tempTerm = vscode.window.createTerminal("Joi Akash Formater");
+				tempTerm.sendText('clang-format -style=' + formatStyle + ' -i ' + '"' + editor.document.uri.fsPath + '"');
+				tempTerm.sendText('exit');
+			}
 		}
 		else
 		{
@@ -47,8 +59,6 @@ export function activate(context: vscode.ExtensionContext)
 		}
 		
 		let conf = vscode.workspace.getConfiguration("joi-akash-runner.executorMap");
-
-		var languageId = editor.document.languageId;
 
 		if (troll)
 			vscode.window.showInformationMessage("Akashdip predicts it's " + languageId); // Detecting languages
