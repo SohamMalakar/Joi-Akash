@@ -2,6 +2,12 @@
 
 All notable changes to the "Joi Akash" extension will be documented in this file.
 
+## [0.2.1] - 2021-12-23
+
+### Fixed
+
+- Now, it does not require you to reload all the time unless you are trolling
+
 ## [0.2.0] - 2021-12-23
 
 ### Added

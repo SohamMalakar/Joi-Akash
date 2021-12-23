@@ -6,7 +6,7 @@
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
 	"description": "An extension for running various kinds of programming languages.",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -106,7 +106,7 @@
 				"joi-akash-runner.commandLineArguments": {
 					"type": "boolean",
 					"default": true,
-					"description": "Whether to show the Program Args prompt (Requires reload)",
+					"description": "Whether to show the Program Args prompt",
 					"scope": "resource"
 				},
 				"joi-akash-runner.troll": {
@@ -118,13 +118,13 @@
 				"joi-akash-runner.formatOnRun": {
 					"type": "boolean",
 					"default": true,
-					"description": "Format your code on run using clang-format (Requires reload)",
+					"description": "Formats your code on run using clang-format",
 					"scope": "resource"
 				},
 				"joi-akash-runner.formatStyle": {
 					"type": "string",
 					"default": "microsoft",
-					"description": "Style Options: LLVM, Google, Chromium, Mozilla, WebKit, Microsoft (Requires reload)",
+					"description": "Style Options: LLVM, Google, Chromium, Mozilla, WebKit, Microsoft",
 					"scope": "resource"
 				}
 			}
