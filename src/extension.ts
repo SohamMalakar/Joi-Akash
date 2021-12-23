@@ -14,12 +14,14 @@ export function activate(context: vscode.ExtensionContext)
 {
 	const myCommandId = 'joiakash.run';
 	
-	let joi = vscode.workspace.getConfiguration("joi-akash-runner");
-	let troll = joi.get<boolean>("troll");
-	let formatOnRun = joi.get<boolean>("formatOnRun");
-	let formatStyle = joi.get<string>('formatStyle');
+	let _joi = vscode.workspace.getConfiguration("joi-akash-runner");
+	let troll = _joi.get<boolean>("troll");
 
 	context.subscriptions.push(vscode.commands.registerCommand(myCommandId, async () => {
+
+		let joi = vscode.workspace.getConfiguration("joi-akash-runner");
+		let formatOnRun = joi.get<boolean>("formatOnRun");
+		let formatStyle = joi.get<string>('formatStyle');
 
 		const editor = vscode.window.activeTextEditor;
 
