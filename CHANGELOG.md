@@ -2,6 +2,12 @@
 
 All notable changes to the "Joi Akash" extension will be documented in this file.
 
+## [0.2.0] - 2021-12-23
+
+### Added
+
+- Clang-format support added
+
 ## [0.1.8] - 2021-12-14
 
 ### Fixed
