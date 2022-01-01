@@ -56,6 +56,6 @@ If you type these following keywords in the **joi-akash-runner.executorMap**, it
 
 > **Note**: It's **NOT** a compiler or an interpreter of any kind. If you want to run programs with it, you should install the appropriate compiler or interpreter.
 
-## Contribuion
+## Contribution
 
 If you want to contribute to this extension, please open an issue on [GitHub](https://github.com/SohamMalakar/Joi-Akash/issues).
