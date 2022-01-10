@@ -13,6 +13,7 @@ function replaceAllFromAString(str: string, find: string, replace: string): stri
 export function activate(context: vscode.ExtensionContext)
 {
 	const myCommandId = 'joiakash.run';
+	const formatOnSaveCommandId = 'joiakash.format'
 	
 	let _joi = vscode.workspace.getConfiguration("joi-akash-runner");
 	let troll = _joi.get<boolean>("troll");
@@ -20,9 +21,6 @@ export function activate(context: vscode.ExtensionContext)
 	context.subscriptions.push(vscode.commands.registerCommand(myCommandId, async () => {
 
 		let joi = vscode.workspace.getConfiguration("joi-akash-runner");
-		let formatOnRun = joi.get<boolean>("formatOnRun");
-		let formatStyle = joi.get<string>('formatStyle');
-
 		const editor = vscode.window.activeTextEditor;
 
 		// Executor Map variables
@@ -46,13 +44,6 @@ export function activate(context: vscode.ExtensionContext)
 			dirWithoutTrailingSlash = '"' + dirWithoutTrailingSlash + '"';
 
 			languageId = editor.document.languageId;
-
-			if ((languageId == "c" || languageId == "cpp" || languageId == "csharp" || languageId == "java" || languageId == "javascript" || languageId == "json" || languageId == "objective-c" || languageId == "proto3") && formatOnRun)
-			{
-				var tempTerm = vscode.window.createTerminal("Joi Akash Formater");
-				tempTerm.sendText('clang-format -style=' + formatStyle + ' -i ' + '"' + editor.document.uri.fsPath + '"');
-				tempTerm.sendText('exit');
-			}
 		}
 		else
 		{
@@ -115,6 +106,27 @@ export function activate(context: vscode.ExtensionContext)
 		
 		term.show();
 		term.sendText(cmd);
+	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand(formatOnSaveCommandId, async () => {
+		
+		let joi = vscode.workspace.getConfiguration("joi-akash-runner");
+		let formatOnSave = joi.get<boolean>("formatOnSave");
+		let formatStyle = joi.get<string>('formatStyle');
+
+		const editor = vscode.window.activeTextEditor;
+
+		if (editor)
+		{
+			let languageId = editor.document.languageId;
+
+			if ((languageId == "c" || languageId == "cpp" || languageId == "csharp" || languageId == "java" || languageId == "javascript" || languageId == "json" || languageId == "objective-c" || languageId == "proto3") && formatOnSave)
+			{
+				var tempTerm = vscode.window.createTerminal("Joi Akash Formater");
+				tempTerm.sendText('clang-format -style=' + formatStyle + ' -i ' + '"' + editor.document.uri.fsPath + '"');
+				tempTerm.sendText('exit');
+			}
+		}
 	}));
 
 	// create a new status bar item that we can now manage

@@ -2,6 +2,16 @@
 
 All notable changes to the "Joi Akash" extension will be documented in this file.
 
+## [0.2.3] - 2022-01-10
+
+### Added
+
+- Format on save property added
+
+### Removed
+
+- Format on run property removed
+
 ## [0.2.1] - 2021-12-23
 
 ### Fixed
