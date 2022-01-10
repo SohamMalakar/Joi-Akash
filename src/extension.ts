@@ -111,7 +111,6 @@ export function activate(context: vscode.ExtensionContext)
 	context.subscriptions.push(vscode.commands.registerCommand(formatOnSaveCommandId, async () => {
 		
 		let joi = vscode.workspace.getConfiguration("joi-akash-runner");
-		let formatOnSave = joi.get<boolean>("formatOnSave");
 		let formatStyle = joi.get<string>('formatStyle');
 
 		const editor = vscode.window.activeTextEditor;
@@ -120,7 +119,7 @@ export function activate(context: vscode.ExtensionContext)
 		{
 			let languageId = editor.document.languageId;
 
-			if ((languageId == "c" || languageId == "cpp" || languageId == "csharp" || languageId == "java" || languageId == "javascript" || languageId == "json" || languageId == "objective-c" || languageId == "proto3") && formatOnSave)
+			if (languageId == "c" || languageId == "cpp" || languageId == "csharp" || languageId == "java" || languageId == "javascript" || languageId == "json" || languageId == "objective-c" || languageId == "proto3")
 			{
 				var tempTerm = vscode.window.createTerminal("Joi Akash Formater");
 				tempTerm.sendText('clang-format -style=' + formatStyle + ' -i ' + '"' + editor.document.uri.fsPath + '"');

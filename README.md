@@ -13,7 +13,7 @@
 
 <div align="center">
 
-[![vscode](https://img.shields.io/badge/VS_Code-v1.62+-373277.svg?style=for-the-badge&logo=microsoft&logoColor=white&colorA=2b303b&colorB=7cb7ff)](https://code.visualstudio.com/updates/v1_62)  [![downloads](https://img.shields.io/visual-studio-marketplace/d/SohamMalakar.joiakash?style=for-the-badge&logo=docusign&logoColor=white&colorA=2b303b&colorB=96E072)](https://marketplace.visualstudio.com/items?itemName=SohamMalakar.joiakash)  [![rating](https://img.shields.io/visual-studio-marketplace/stars/SohamMalakar.joiakash?style=for-the-badge&logo=reverbnation&logoColor=white&colorA=2b303b&colorB=00e8c6)](https://marketplace.visualstudio.com/items?itemName=SohamMalakar.joiakash)
+[![vscode](https://img.shields.io/badge/VS_Code-v1.62+-373277.svg?style=for-the-badge&logo=microsoft&logoColor=white&colorA=2b303b&colorB=7cb7ff)](https://code.visualstudio.com/updates/v1_62) [![downloads](https://img.shields.io/visual-studio-marketplace/d/SohamMalakar.joiakash?style=for-the-badge&logo=docusign&logoColor=white&colorA=2b303b&colorB=96E072)](https://marketplace.visualstudio.com/items?itemName=SohamMalakar.joiakash) [![rating](https://img.shields.io/visual-studio-marketplace/stars/SohamMalakar.joiakash?style=for-the-badge&logo=reverbnation&logoColor=white&colorA=2b303b&colorB=00e8c6)](https://marketplace.visualstudio.com/items?itemName=SohamMalakar.joiakash)
 
 </div>
 
@@ -25,10 +25,16 @@ This is a simple executor for programming languages with **command line argument
 
 ## Usage
 
-- Click the status bar **Joi Akash** logo to run programs.
+To run a program, do any of the following:
+
+- Click the status bar **Joi Akash** logo to run programs
 - Use the shortcut (**default**: `Ctrl+Alt+A`) to run the command.
 
-Also, you can use the command palette (either with `F1` or `Ctrl+Shift+P`) and search for **Joi Akash**.
+To format a program, do the following:
+
+- Use the shortcut (**default**: `Ctrl+Alt+F`) to format your code using clang-format.
+
+Also, you can use the command palette (either with `F1` or `Ctrl+Shift+P`) and search for **Joi Akash** or **Joi Akash Format**.
 
 ## Configuration
 

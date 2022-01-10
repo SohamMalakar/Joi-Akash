@@ -6,7 +6,7 @@
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
 	"description": "An extension for running various kinds of programming languages.",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -36,7 +36,7 @@
 			},
 			{
 			  "command": "joiakash.format",
-			  "key": "ctrl+s"
+			  "key": "ctrl+alt+f"
 			}
 		],
 		"configuration": {
@@ -121,12 +121,6 @@
 					"type": "boolean",
 					"default": true,
 					"description": "Do you want me to troll Akashdip? (Requires reload)",
-					"scope": "resource"
-				},
-				"joi-akash-runner.formatOnSave": {
-					"type": "boolean",
-					"default": true,
-					"description": "Formats your code on save using clang-format",
 					"scope": "resource"
 				},
 				"joi-akash-runner.formatStyle": {
