@@ -6,7 +6,7 @@
 		"url": "https://github.com/SohamMalakar/Joi-Akash.git"
 	},
 	"description": "An extension for running various kinds of programming languages.",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -93,7 +93,7 @@
 						"pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt $tempArgs",
 						"d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt $tempArgs",
 						
-						"haskell": "runhaskell",
+						"haskell": "cd $dir && runhaskell $fileName $tempArgs",
 						
 						"nim": "nim compile --verbosity:0 --hints:off --run",
 						"lisp": "sbcl --script",
