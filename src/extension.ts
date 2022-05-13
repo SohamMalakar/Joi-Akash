@@ -124,6 +124,7 @@ export function activate(context: vscode.ExtensionContext)
 				var tempTerm = vscode.window.createTerminal("Joi Akash Formater");
 				tempTerm.sendText('clang-format -style=' + formatStyle + ' -i ' + '"' + editor.document.uri.fsPath + '"');
 				tempTerm.sendText('exit');
+				vscode.window.showInformationMessage("Code formatted.");
 			}
 		}
 	}));
